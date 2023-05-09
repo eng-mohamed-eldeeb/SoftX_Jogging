@@ -88,8 +88,6 @@ class JoggingTimesController < ApplicationController
     end
   end
 
-
-
   private
 
   def show_user_records_by_admin_params
