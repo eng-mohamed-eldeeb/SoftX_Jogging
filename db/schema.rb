@@ -10,9 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_08_150911) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_08_184038) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "jogging_times", force: :cascade do |t|
+    t.date "date"
+    t.string "distance"
+    t.datetime "time"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_jogging_times_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,9 +33,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_08_150911) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "jti"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["jti"], name: "index_users_on_jti"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jogging_times", "users"
 end
