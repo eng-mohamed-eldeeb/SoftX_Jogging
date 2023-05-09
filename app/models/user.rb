@@ -10,7 +10,7 @@ class User < ApplicationRecord
   # cancancan stuff
   def admin?
     role == 'admin'
-   end
+  end
 
   def user_manager?
     role == 'user_manager'
@@ -19,5 +19,4 @@ class User < ApplicationRecord
   def user?
     role == 'user'
   end
-  
 end
