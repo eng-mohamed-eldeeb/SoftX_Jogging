@@ -43,6 +43,12 @@ class UsersController < ApplicationController
     end
   end
 
+  # =============================================
+
+  # another approach is to use the model to do the calculations
+
+  # =============================================
+
   def weekly_report
     # Find the user
     user = User.find(params[:id])
