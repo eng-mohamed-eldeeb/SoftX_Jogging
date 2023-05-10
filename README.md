@@ -72,6 +72,7 @@ Endpoint  | Method | Description | ex
 Endpoint  | Method | Description | ex
 ------------- | ------------- | ------------- | -------------
 /signup  | POST | This creates a special user with admin. Thins returns the token. By using this token we can a lot of things | {  "user": {"email": "admin@example.com", "password": "12345678",  "role": admin"  }
+/signup  | POST | This creates a special user with admin. Thins returns the token. By using this token we can a lot of things | {  "user": {"email": "admin@example.com", "password": "12345678",  "role": admin"  }
 /jogging_times/add-jogging-times-to-user  | POST | By using an admin user token we can add the jogging times of a user. In this example we added a record to this user. | {"jogging_time": {      "date": "2023-05-10",      "distance": "c miles",      "time": "2023-05-10T07:30:00Z",      "user_id": 2    }}
 /jogging_times/update-jogging-times-to-user/4 | PUT | This update the jogging time of a certain user. It can also change the id of the user. The id is for the jogging time id |  {  "jogging_time": {      "date": 2023-05-10",      "distance": "50 miles",      "time": 2023-05-10T07:30:00Z",      "user_id": 1    }}
 /jogging_times/show-jogging-times-to-user/1  | GET | This returns the jogging times of a certain user. |  N/A
@@ -95,6 +96,7 @@ Endpoint  | Method | Description | ex
 /users/destroy/5  | DELETE | deletes the user with the id of 5. |  N/A
 /users/filter_jogging_times_by_dates  | GET | This Filter by dates from-to. NOTE: the ID is the user id | {    "id": 5,    "start_date": "2020-01-01",    end_date": "2023-12-30"  }
 /users/weekly_report/6  | GET  | Report on average speed & distance per week for a user with the id 6 |  N/A
+/users/create  | POST | crates a new user. |    "user": {   "email": "user_manger@example.com",   "password": "12345678",  "role": "user_manager" }}
 
 
 ### Run tests

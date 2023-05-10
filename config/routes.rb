@@ -29,17 +29,12 @@ Rails.application.routes.draw do
   delete 'jogging_times/remove-jogging-times-to-user/:id', to: 'jogging_times#remove_records_from_user_by_admin'
   # =======================================================================================================
 
-  # why do I need this?
-  # the admin can simply signup as a normal user and that will create a user
-  # this can be easily handled by the frontend
-  #  |
-  #  V
-  # post 'users/create', to: 'users#create'
   
   # =======================================================================================================
   
   # admin and user_manager routes
-
+  
+  post 'users/create', to: 'users#create'
   put 'users/update/:id', to: 'users#update'
   get 'users/show/:id', to: 'users#show'
   delete 'users/destroy/:id', to: 'users#destroy'
